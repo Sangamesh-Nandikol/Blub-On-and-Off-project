@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blub Project</title>
+
+    <style>
+    .blub-con{
+        margin: 25px;
+        padding: 25px;
+    }
+    </style>
+</head>
+<body>
+    <h1>Blub On and Off Project</h1>
+    <button id="on" onclick="onblb()">trun on</button>
+    <button id="off" onclick="offblb()">trun off</button>
+    <button id="onoff" onclick="onoff()">On</button>
+
+    <div class="blub-con">
+        <img id="blub" src="off.jpg">
+    </div>
+
+    <script>
+        const onblb=()=>{
+            let b=document.getElementById("blub");
+            b.setAttribute("src","On.jpg")            
+        }
+        const offblb=()=>{
+
+            let b=document.getElementById("blub");
+            b.setAttribute("src","off.jpg")   
+
+        }
+
+        const onoff=()=>{
+
+          let b= document.getElementById("blub");
+           let srcVal= b.getAttribute("src");
+          //  console.log(srcVal)
+          let bu= document.getElementById("onoff");  
+            let buAtt=bu.innerHTML;
+           if(srcVal=="off.jpg"){
+                onblb();
+                bu.innerHTML="Off";
+            
+            console.log(buAtt) 
+           }else{
+                offblb();
+                bu.innerHTML="On"
+           }
+
+        }
+
+    </script>
+</body>
+</html>
